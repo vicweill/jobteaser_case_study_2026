@@ -2,7 +2,7 @@ Welcome on my application for an analytics engineer role at JobTeaser !
 
 # Objective
 
-// Use the case study instructions here
+The objective of this technical case study is to evaluate my skills with a realistic project. JobTeaser is developing a product called Career Explorer, a tool that enables universities to offer career guidance programs to their students. This tool is hosted on OpenEDX, where some information is stored. As an analytics engineer, I need to design a dbt architecture to help a Product Manager, and use OpenEDX API to get each course name.
 
 # Launch project
 
