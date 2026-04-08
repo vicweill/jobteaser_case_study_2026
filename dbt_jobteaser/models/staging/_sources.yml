@@ -1,0 +1,44 @@
+version: 2
+
+## On real data sources, we should add a test for data freshness
+sources:
+  - name: raw_data
+    schema: main
+    tables:
+      - name: applications_in_jobteaser
+        description: "Log of clicks on the 'Apply' button for job vacancies on JobTeaser, enriched with job categories and companies’ sectors of activity."
+        meta:
+          external_location: "../data/applications_in_jobteaser.csv"
+      - name: completed_blocks
+        description: "Log of completion events. Each row indicates that a user has completed a specific block (part of a course) on a given date."
+        meta:
+          external_location: "../data/completed_blocks.csv"
+      - name: count_of_blocks_per_course
+        description: "Structure table indicating the total number of teaching blocks contained in each course."
+        meta:
+          external_location: "../data/count_of_blocks_per_course.csv"
+      - name: courses
+        description: "List of courses available on the Career Explorer platform, including their names, languages and estimated workloads."
+        meta:
+          external_location: "../data/courses.csv"
+      - name: enrollment
+        description: "History of course enrolments. Records when a user enrols in a course and whether that enrolment is still active."
+        meta:
+          external_location: "../data/enrollment.csv"
+      - name: pre_enrollment
+        description: "List of pre-enrolments or access authorisations. Contains automatic enrolment flags by course and by user."
+        meta:
+          external_location: "../data/pre_enrollment.csv"
+      - name: users_in_career_explorer
+        description: "User profile data within the LMS (staff status, superuser status, last login and account creation date)."
+        meta:
+          external_location: "../data/users_in_career_explorer.csv"
+      - name: users_in_jobteaser
+        description: "User dimension table on the JobTeaser side. It links JobTeaser IDs, Career Explorer IDs and email addresses."
+        meta:
+          external_location: "../data/users_in_jobteaser.csv"
+        config:
+          freshness:
+            warn_after: {count: 24, period: hour}
+            error_after: {count: 36, period: hour}
+          loaded_at_field: user_created_at

@@ -1,0 +1,10 @@
+version: 2
+
+models:
+  - name: int_join_jt_and_ce_users
+    description: ""
+    columns:
+      - name: email
+        data_tests:
+          - unique
+          - not_null

@@ -1,0 +1,8 @@
+jobteaser_dbt_profile:
+  target: dev
+  outputs:
+    dev:
+      type: duckdb
+      path: "database.duckdb"
+      # extensions:
+      #   - httpfs

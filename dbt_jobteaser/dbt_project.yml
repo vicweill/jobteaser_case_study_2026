@@ -1,0 +1,27 @@
+name: 'jobteaser_analytics'
+version: '1.0.0'
+
+profile: 'jobteaser_dbt_profile'
+
+# These configurations specify where dbt should look for different types of files.
+# The `model-paths` config, for example, states that models in this project can be
+# found in the "models/" directory. You probably won't need to change these!
+model-paths: ["models"]
+analysis-paths: ["analyses"]
+test-paths: ["tests"]
+seed-paths: ["seeds"]
+macro-paths: ["macros"]
+snapshot-paths: ["snapshots"]
+
+clean-targets:
+  - "target"
+  - "dbt_packages"
+
+models:
+  jobteaser_dbt_profile:
+    staging:
+      +materialized: view
+    intermediate:
+      +materialized: view
+    mart:
+      +materialized: table

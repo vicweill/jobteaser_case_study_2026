@@ -1,0 +1,59 @@
+version: 2
+
+models:
+  - name: stg_applications_in_jobteaser
+    description: "Cleaned version of the applications_in_jobteaser table"
+    columns:
+      - name: application_id
+        data_tests:
+          - unique
+          - not_null
+  - name: stg_completed_blocks
+    description: "Cleaned version of the completed_blocks table"
+    columns:
+      - name: completed_block_id
+        data_tests:
+          - unique
+          - not_null
+  - name: stg_count_of_blocks_per_course
+    description: "Cleaned version of the count_of_blocks_per_course table"
+    columns:
+      - name: course_key
+        data_tests:
+          - unique
+          - not_null
+  - name: stg_courses
+    description: "Cleaned version of the courses table"
+    columns:
+      - name: course_key
+        data_tests:
+          - unique
+          - not_null
+  - name: stg_enrollment
+    description: "Cleaned version of the enrollment table"
+    columns:
+      - name: enrollment_id
+        data_tests:
+          - unique
+          - not_null
+  - name: stg_pre_enrollment
+    description: "Cleaned version of the pre_enrollment table"
+    columns:
+      - name: pre_enrollment_id
+        data_tests:
+          - unique
+          - not_null
+  - name: stg_users_in_career_explorer
+    description: "Cleaned version of the users_in_career_explorer table"
+    columns:
+      - name: career_explorer_user_id
+        data_tests:
+          - unique
+          - not_null
+  - name: stg_users_in_jobteaser
+    description: "Cleaned version of the users_in_jobteaser table"
+    columns:
+      - name: jobteaser_user_id
+        data_tests:
+          - unique
+          - not_null
